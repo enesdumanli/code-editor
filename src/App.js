@@ -2,7 +2,7 @@ import "./App.css";
 import Editor from "@monaco-editor/react";
 import { useRef, useState } from "react";
 import LanguageDropdown from "./LanguageDropdown";
-
+import ReplayIcon from "@mui/icons-material/Replay";
 function App() {
   const languageRef = useRef(null);
   const initialJavascript = `
@@ -44,21 +44,32 @@ function App() {
       <div className="header">
         <LanguageDropdown setLanguage={setLanguage} language={language} />
         <button
+          className="reset-button"
           onClick={() => {
             setCodeTextJavascript(initialJavascript);
             setCodeTextJava(initialJava);
           }}
         >
-          reset to initial view
+          <ReplayIcon />
+          {"Reset to Initial Code"}
         </button>
       </div>
       <Editor
-        height="390vh"
+        height={"50vh"}
         theme="vs-dark"
         language={language}
         value={language === "javascript" ? codeTextJavascript : codeTextJava}
         onChange={handleEditorChange}
       />
+      <div className="footer">
+        <div className="footer-run">
+          {"Output"}
+          <button className="footer-run__button" disabled={true}>
+            Run
+          </button>
+        </div>
+        <div className={"footer-console"}>{"Click run to see your output"}</div>
+      </div>
     </>
   );
 }
