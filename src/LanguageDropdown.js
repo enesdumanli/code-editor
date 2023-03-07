@@ -10,11 +10,12 @@ function LanguageDropdown({ setLanguage, language }) {
       <Dropdown.Menu>
         <Dropdown.Item
           onClick={() => setLanguage("javascript")}
-          href="#/action-1"
+          href="#/javascript"
         >
           Javascript
         </Dropdown.Item>
-        <Dropdown.Item onClick={() => setLanguage("java")} href="#/action-2">
+
+        <Dropdown.Item onClick={() => setLanguage("java")} href="#/java">
           Java
         </Dropdown.Item>
       </Dropdown.Menu>

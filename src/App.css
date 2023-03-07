@@ -1,6 +1,13 @@
+.general-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
 .header {
   background-color: gray;
-  height: 100px;
+  min-height: 7vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +17,7 @@
 .reset-button {
   background-color: transparent;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   border: none;
   font-weight: 500;
   align-items: center;
@@ -18,10 +25,14 @@
   gap: 8px;
 }
 
+.editor {
+  overflow: hidden;
+}
+
 .footer {
   background-color: rgb(39, 36, 36);
   color: white;
-  height: 150px;
+  min-height: 21vh;
   display: flex;
   flex-direction: column;
 }

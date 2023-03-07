@@ -12,7 +12,6 @@ function App() {
     
     // Insert your code here
   }; 
-  
   `;
   const initialJava = `
   class Solution {
@@ -41,7 +40,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="general-container">
       <div className="header">
         <LanguageDropdown setLanguage={setLanguage} language={language} />
 
@@ -59,7 +58,8 @@ function App() {
       </div>
 
       <Editor
-        height={"40vh"}
+        height={"72vh"}
+        className="editor"
         theme="vs-dark"
         language={language}
         value={language === "javascript" ? codeTextJavascript : codeTextJava}
@@ -75,7 +75,7 @@ function App() {
 
         <div className={"footer-console"}>{"Click run to see your output"}</div>
       </div>
-    </>
+    </div>
   );
 }
 
