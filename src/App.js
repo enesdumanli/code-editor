@@ -22,14 +22,14 @@ function App() {
     }
   `;
 
-  const [language, setLanguage] = useState("Javascript");
+  const [language, setLanguage] = useState("javascript");
   const [codeTextJavascript, setCodeTextJavascript] =
     useState(initialJavascript);
   const [codeTextJava, setCodeTextJava] = useState(initialJava);
 
   function handleEditorChange(value) {
     console.log("language inside function", language);
-    if (languageRef.current === "Javascript") {
+    if (languageRef.current === "javascript") {
       setCodeTextJavascript(value);
     } else {
       setCodeTextJava(value);
@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <div className="header">
-        <LanguageDropdown setLanguage={setLanguage} />
+        <LanguageDropdown setLanguage={setLanguage} language={language} />
         <button
           onClick={() => {
             setCodeTextJavascript(initialJavascript);
@@ -56,7 +56,7 @@ function App() {
         height="390vh"
         theme="vs-dark"
         language={language}
-        value={language === "Javascript" ? codeTextJavascript : codeTextJava}
+        value={language === "javascript" ? codeTextJavascript : codeTextJava}
         onChange={handleEditorChange}
       />
     </>

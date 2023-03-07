@@ -1,29 +1,21 @@
-import { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-function LanguageDropdown({ setLanguage }) {
-  const [dropdownLanguage, setDropdownLanguage] = useState("Javascript");
-
+function LanguageDropdown({ setLanguage, language }) {
   return (
-    <Dropdown onSelect={setDropdownLanguage}>
+    <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
-        {dropdownLanguage}
+        {language.charAt(0).toUpperCase() + language.slice(1)}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
         <Dropdown.Item
-          eventKey={"Javascript"}
-          onClick={() => setLanguage("Javascript")}
+          onClick={() => setLanguage("javascript")}
           href="#/action-1"
         >
-          javascript
+          Javascript
         </Dropdown.Item>
-        <Dropdown.Item
-          eventKey={"Java"}
-          onClick={() => setLanguage("Java")}
-          href="#/action-2"
-        >
-          java
+        <Dropdown.Item onClick={() => setLanguage("java")} href="#/action-2">
+          Java
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
