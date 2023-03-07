@@ -53,12 +53,13 @@ function App() {
           }}
         >
           <ReplayIcon />
+
           {"Reset to Initial Code"}
         </button>
       </div>
 
       <Editor
-        height={"50vh"}
+        height={"40vh"}
         theme="vs-dark"
         language={language}
         value={language === "javascript" ? codeTextJavascript : codeTextJava}
@@ -69,9 +70,7 @@ function App() {
         <div className="footer-run">
           {"Output"}
 
-          <button className="footer-run__button" disabled={true}>
-            Run
-          </button>
+          <button className="footer-run__button">Run</button>
         </div>
 
         <div className={"footer-console"}>{"Click run to see your output"}</div>
